@@ -7,6 +7,8 @@ from operator import itemgetter
 
 # Invalid response
 # authentication error
+# readme
+# requirements
 
 def get_tickets():
 	# Get all tickets
