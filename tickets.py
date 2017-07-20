@@ -42,7 +42,7 @@ def get_tickets():
 		print ("Something is wrong!", e)
 
 def get_tickets_id(id):
-    # Get ticket by ticket number	
+    # Get ticket by ticket ID	
 	try:
 		if id.isnumeric() == True:
 				url = "https://alisha9355.zendesk.com/api/v2/tickets/{}.json".format(id)
