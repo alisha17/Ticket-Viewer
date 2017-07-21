@@ -10,4 +10,4 @@ def connect():
 		return ("Connection established successfully!")
 
 	except Exception as err:
-		return (":( Oh uh, connection not established due to:", err)
+		return (":( Oh uh, connection is not established. Please check the URL.")

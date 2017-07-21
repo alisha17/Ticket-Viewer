@@ -3,6 +3,7 @@ import tabulate
 import json
 import pydoc
 
+from requests import ConnectionError
 from operator import itemgetter
 
 def get_tickets():
@@ -37,12 +38,14 @@ def get_tickets():
 				else:
 						print (pydoc.pager(tabulate.tabulate(rows, headers, tablefmt="grid")))
 							
+	except ConnectionError:
+		print ("Oops! This API is not valid.")
 
-	except Exception as e:
-		print ("Something is wrong!", e)
+	except Exception:
+		print ("Oops! Something is wrong. Please check and try again.")
 
 def get_tickets_id(id):
-    # Get ticket by ticket ID	
+    # Get ticket by ticket number	
 	try:
 		if id.isnumeric() == True:
 				url = "https://alisha9355.zendesk.com/api/v2/tickets/{}.json".format(id)
@@ -68,5 +71,5 @@ def get_tickets_id(id):
     			print ("Oops! ID has to be a positive integer value")
     			exit()
 
-	except Exception as e:
-		print (e)
+	except Exception:
+		print ("Oops! Something is wrong. Please check and try again.")
